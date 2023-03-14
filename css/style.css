@@ -1,0 +1,597 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Commissioner', sans-serif;
+}
+:root{
+    --Moderate-cyan: hsl(176, 50%, 47%);
+    --Dark-cyan: hsl(176, 72%, 28%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-gray: hsl(0, 0%, 48%);
+    --white:white;
+    --border-raduis:10px;
+    --text-center:center;
+    --padding:10px 12px;
+}
+
+ul {
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+}
+nav{
+    font-size: 15px;
+    z-index: 5;
+}
+
+nav .menu{
+	width: calc(100% - 128px);
+
+}
+nav .menu ul{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+nav .menu ul li{
+	padding-left: 15px;
+    padding-right:15px;
+    margin-right: 20px;
+    position: relative;
+    
+}
+nav .menu ul li::before{
+    content: "";
+    position: absolute;
+    background: var(--Moderate-cyan);
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    transition: all 0.5s ease;
+    transform-origin: left;
+    left: 0;
+    border-radius: 10px;
+}
+nav .menu ul li:hover::before{
+    transform: scale(1);
+    transform-origin: right;
+}
+nav .menu ul li a{
+	color:white;
+	font-weight: 600;
+    position: relative;
+    z-index: 100;
+}
+
+@media (min-width:100px) and (max-width:991px){
+	nav{
+        position: relative;
+        height: 42.5px;
+        z-index: 100;
+    }
+    nav .button{
+    padding: 0;
+    margin: 0;
+    width: calc(100% - 128px);
+    position: relative;
+    height: 28px;
+    color: white;
+    }
+    nav .button li{
+    position: absolute;
+    right: 0;
+    font-size: 19px;
+    }
+    nav .button li.active{
+        display: block;
+    }
+    nav .button li{
+        display: none;
+    }
+    nav .menu{
+        flex-direction: column;
+        position: absolute;
+        background-color: var(--Dark-cyan);
+        border-radius: 5px;
+		width: 100%;
+        padding: 20px;
+        top: 51px;
+        
+    }
+
+    nav  .d-hidden{
+        display: none;
+    }
+
+	nav .menu ul{
+		width: 100%;
+		text-align: var(--text-center);
+        line-height: 3;
+	}
+}
+.header{
+    position: relative;
+    top: -43px;
+}
+.header .image{
+    overflow: hidden;
+}
+.header .image img{
+position: relative;
+z-index: 4;
+
+}
+.header .image img:hover{
+    transform: scale(1.5);
+    transition: all 0.5s ease;
+}
+.articel{
+    position: relative;
+    top: -8vh;
+display: flex;
+justify-content: center;
+background: #f5f2f2;
+
+}
+.articel .bamboo{
+    z-index: 5;
+}
+.articel .bamboo,.numbers,.about{
+    background-color: var(--white);
+    border-radius: var(--border-raduis);
+    position: relative;
+    padding: var(--padding);
+}
+.articel .bamboo .image{
+    text-align: var(--text-center);
+    position: relative;
+    top: -38px;
+}
+.articel .bamboo h6{
+    text-align: var(--text-center);
+    font-weight: 700;
+    margin-top: -13px;
+}
+.articel .bamboo p{
+    text-align: var(--text-center);
+    font-size: 15px;
+    color: var(--Dark-gray);
+}
+.articel .bamboo .button{
+    display: flex;
+    justify-content: space-between;
+}
+.articel .bamboo .button a{
+    border: none;
+    
+    border-radius: 16px;
+    font-size: 15px;
+}
+.articel .bamboo .button a:nth-of-type(1){
+padding: 5px 10px;
+color: var(--white);
+background: var(--Dark-cyan);
+    display: flex;
+    align-items: center;
+}
+.articel .bamboo .button a:nth-of-type(1):hover{
+    background-color: var(--Moderate-cyan);
+    transition: ease 0.5s;
+}
+.articel .bamboo .button a:nth-of-type(2){
+    padding: 10px 15px;
+    background: #ccc;
+    color: var(--Black);
+    margin-left: 10px;
+}
+.articel .bamboo .button a:nth-of-type(2) .bookmark{
+    background-color: var(--Black);
+    position: relative;
+    padding: 12px;
+    border-radius: 34px;
+    left: -15px;
+    top: 0.02rem;
+}
+.articel .bamboo .button a:nth-of-type(2) .bookmark svg{
+    color: var(--Dark-gray);
+}
+.articel .bamboo .button a:nth-of-type(2):hover{
+    background: var(--Moderate-cyan);
+    transition: ease 0.5s;
+}
+@media(max-width:540px){
+    .articel {
+        padding:0 19px;
+    }
+}
+@media(max-width:401px){
+    .articel .bamboo .button{
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    .articel .bamboo .button a{
+        margin-bottom: 10px;
+    }
+    .articel .bamboo .button a:nth-of-type(1){
+        text-align: center;
+            padding: 10px;
+    }
+}
+@media(max-width:271px){
+    .articel .bamboo .button a:nth-of-type(2){
+            display: flex;
+    align-items: center;
+        padding: 12px;
+    }
+    .articel .bamboo .button a:nth-of-type(2) span:nth-of-type(1){
+        width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        left: -8.5px;
+    }
+}
+.articel .numbers .num{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.articel .numbers .num .number h6{
+color: var(--Black);
+font-weight: 800;
+}
+.articel .numbers .num .number .backed{
+    color: var(--Dark-gray);
+    font-size: 15px;
+}
+
+@media(min-width:518px){
+    .articel .numbers .num .number{
+    width: 100%;
+
+ }
+.articel .numbers .num .number:not(:nth-child(3)){
+position: relative;
+}
+.articel .numbers .num .number:not(:nth-child(3))::after{
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: var(--Dark-gray);
+    top: 0;
+    right: 10px;
+}
+}
+
+@media(max-width:517px){
+    .articel .numbers .num{
+        flex-direction: column;
+    }
+    .articel .numbers .num .number{
+    margin-bottom: 28px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    }
+    .articel .numbers .num .number:not(:nth-child(3))::after{
+    content: "";
+    position: absolute;
+    width: calc(100% - 30px);
+    height: 1px;
+    background-color: var(--Dark-gray);
+    left: 15px;
+    bottom: -8px;
+}
+}
+.articel .numbers .prograss_bar{
+    margin-top: 23px;
+    width: 100%;
+    height: 9px;
+    background: var(--Dark-gray);
+    border-radius: 5px;
+    position: relative;
+}
+.articel .numbers .prograss_bar .prograss{
+    position: absolute;
+    background: var(--Dark-cyan);
+    width: 85%;
+    height: 9px;
+    border-radius: 5px;
+}
+.articel .about .text{
+    margin: 14px 0;
+}
+.articel .about .text h6{
+    color: var(--Black);
+    font-weight: 600;
+    font-size: 20px;
+}
+.articel .about .text p,.about .cards p{
+    color: var(--Dark-gray);
+    font-size: 15px;
+}
+.articel .about .cards{
+    border: 1px solid var(--Dark-gray);
+    border-radius: var(--border-raduis);
+    padding: var(--padding);
+}
+.about .cards .text{
+    display: flex;
+    justify-content: space-between;
+}
+.about .cards .text span{
+    color: var(--Moderate-cyan);
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.about .cards .select{
+    display: flex;
+    justify-content: space-between;
+}
+.about .cards .select .span,.about ul li .cards .inf .span{
+    color: var(--Black);
+    font-size: 23px;
+    font-weight: 800;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.about .cards .select .span span,
+.about ul li .cards .inf .span span{
+    font-size: 17px !important;
+    font-weight: 100 !important;
+    color: var(--Dark-gray) !important;
+    vertical-align: middle;
+        margin-left: 5px;
+}
+.about  .cards .select button{
+    border:none;
+    color: var(--white);
+    background-color: var(--Moderate-cyan);
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 15px;
+}
+
+@media(max-width:487px){
+    .about .cards .text{
+        flex-direction: column;
+    }
+}
+@media(max-width:405px){
+    .about   .cards .select{
+        flex-direction: column;
+    }
+    .about  .cards .select button{
+        margin-top: 10px;
+        font-size: 10px;
+    }
+}
+.about ul li:nth-of-type(2) .boxs .close{
+    position: absolute;
+    width: 100%;
+    height: 5;
+    top: 10px;
+    display: flex;
+    justify-content: end;
+    right: 17px;
+   
+}
+.about ul li:nth-of-type(2) .boxs .close svg{
+    border: 1px solid #eee;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 17px;
+    color: var(--Dark-cyan);
+
+}
+.boxs{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about ul li .cards .boxs.d-card_hidden{
+   visibility: hidden;
+}
+.about ul li .cards .boxs.alert{
+   visibility: visible;
+ position: fixed;
+ background: #eeeeee9e;
+ width: 100%;
+ height: 100%;
+ top: 0;
+ left: 0;
+ transition: all 0.8s ease;
+ z-index: 55;
+}
+.about ul li .cards .boxs .text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--white);
+    border-radius: var(--border-raduis);
+
+   
+    position: relative;
+    padding: 20px;
+    transition: all 1s ease-in-out;
+    left: -70rem;
+   
+    
+}
+.about ul li .cards .boxs.alert .text{
+    left: 0.8rem;
+
+}
+.about ul li:nth-of-type(1) .cards .boxs .text{
+    justify-content: center;
+    width: 50%;
+}
+.about ul li:nth-of-type(2) .cards .boxs .text{
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+@media(max-width:628px){
+
+    .about ul li:nth-of-type(1) .cards .boxs .text{
+        width: 100%;
+    }
+    .about ul li .cards .boxs.alert .text{
+        left: -0.2rem;
+    
+    }
+    .about .cards .d-text_visible{
+        left: 0rem;
+    }
+}
+.about .cards .boxs .text .image{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--Dark-cyan);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--bs-white);
+    margin-bottom: 15px;
+}
+.about .cards .boxs .text button{
+    border: none;
+    background: var(--Moderate-cyan);
+    color: var(--white);
+    font-size: 15px;
+    padding: 5px 15px;
+    border-radius: 10px
+}
+.about .boxs h6{
+    font-weight: 700;
+}
+
+.about  .cards .inf label {
+    position: relative;
+    padding-left: 31px;
+        font-weight: 700;
+}
+.about .cards .inf label::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid var(--Dark-cyan);
+    border-radius: 50%;
+    left: -2px;
+    top: 4px;
+}
+.about  .cards .inf label::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    background: var(--Dark-cyan);
+    border-radius: 50%;
+    left: 2px;
+    top: 8px;
+    opacity: 0;
+    transition: 0.5s;
+}
+.about  .cards .inf input:checked ~ label::after{
+    opacity: 1;
+}
+.about  .cards .inf .stand span{
+    color: var(--Dark-cyan);
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+@media(max-width:541px){
+    .about  .cards .inf{
+        align-items: baseline;
+    }
+    .about  .cards .inf .stand span{
+        display: block;
+        margin-left: 29px;
+    }
+    .about  .cards .inf .span{
+        font-size: 15px;
+    }
+}
+.about  .cards .pledeg{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+    padding-top: 25px;
+    transition: all 0.5s ease;
+   
+}
+
+
+.about  .cards .pledeg::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--Dark-gray);
+    top: -5px;
+}
+.about  .cards .pledeg h6{
+    font-size: 13px;
+    color: var(--Dark-gray);
+}
+.about  .cards .pledeg .inp_btn{
+    display: flex;
+    justify-content: end;
+}
+.about  .cards .pledeg .inp_btn input{
+    width: 34%;
+    border-radius: 36px;
+    padding-left: 10px;
+    border: 1px solid var(--Dark-cyan);
+    margin-right: 10px;
+    scroll-padding-right: none;
+}
+.about  .cards .pledeg .inp_btn input:hover,
+.about  .cards .pledeg .inp_btn input:focus{
+    outline: none;
+}
+.about  .cards .pledeg .inp_btn input::placeholder{
+   margin-left: 20px;
+}
+.about  .cards .pledeg .inp_btn button{
+    background-color: var(--Dark-cyan);
+}
+@media (min-width:100px) and (max-width:608px) {
+    .about  .cards .pledeg{
+        flex-direction: column;
+    }
+}
+@media (min-width:100px) and (max-width:291px) {
+
+    .about  .cards .pledeg .inp_btn{
+        flex-direction: column;
+
+    }
+    .about  .cards .pledeg .inp_btn input{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.about  .cards_3 .select .btn{
+    background: var(--Dark-gray);
+}
